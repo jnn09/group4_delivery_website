@@ -6,8 +6,8 @@ Flask web application for TIW ordering system.
 
 1. Clone the repository
 
-git clone 
-cd tiw-project
+git clone https://github.com/jnn09/group4_delivery_website.git
+cd group4_delivery_website
 
 2. Create virtual environment
 

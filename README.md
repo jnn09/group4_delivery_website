@@ -25,9 +25,9 @@ venv\Scripts\activate
 
 pip install -r requirements.txt
 
-5. Run the app
+5. Run the app, in the terminal, run the command to debug
 
-flask run
+flask --app app --debug run
 
 Then open:
 

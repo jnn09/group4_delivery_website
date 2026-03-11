@@ -134,6 +134,14 @@ input, select, textarea {
 		margin: 0 0 2em 0;
 	}
 
+	p.orange {
+    color: #bf5700;
+	}
+
+	p.white {
+		color: #efefef;
+	}
+
 	h1, h2, h3, h4, h5, h6 {
 		color: #787878;
 		font-weight: 400;
@@ -2446,7 +2454,7 @@ input, select, textarea {
 		background-color: transparent;
 		border-radius: 0.35em;
 		border: solid 3px #efefef;
-		color: #787878 !important;
+		color: #efefef !important;
 		cursor: pointer;
 		display: inline-block;
 		font-weight: 400;
@@ -2464,8 +2472,8 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		.button:hover {
-			border-color: #49bf9d;
-			color: #49bf9d !important;
+			border-color: #505050;
+			color: #505050 !important;
 		}
 
 		input[type="submit"]:active,
@@ -2473,8 +2481,8 @@ input, select, textarea {
 		input[type="button"]:active,
 		.button:active {
 			background-color: rgba(73, 191, 157, 0.1);
-			border-color: #49bf9d;
-			color: #49bf9d !important;
+			border-color: #505050;
+			color: #505050 !important;
 		}
 
 		input[type="submit"].icon,
@@ -2551,6 +2559,12 @@ input, select, textarea {
 			cursor: default;
 		}
 
+		.button.gray {
+		background-color: white;
+		border-color: #aaa4a4;
+		color: #aaa4a4 !important;
+	}
+
 /* Work Item */
 
 	.work-item {
@@ -2591,7 +2605,7 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		background-color: #1f1815;
+		background-color: #bf5700;
 		background-attachment: scroll,								scroll;
 		background-image: url("images/overlay.png"), url("../../images/bg.jpg");
 		background-position: top left,							top left;
@@ -2602,7 +2616,7 @@ input, select, textarea {
 		left: 0;
 		padding: 8em 4em;
 		position: fixed;
-		text-align: right;
+		text-align: center;
 		top: 0;
 		width: 35%;
 	}
@@ -2632,7 +2646,7 @@ input, select, textarea {
 		}
 
 		#header h1 {
-			color: rgba(255, 255, 255, 0.5);
+			color: rgb(255, 255, 255);
 			font-size: 1.35em;
 			line-height: 1.75em;
 			margin: 0;

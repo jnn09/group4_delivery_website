@@ -11,6 +11,11 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
 	</head>
 	<body class="is-preload">
 
@@ -19,8 +24,17 @@
 				<div class="inner">
 					<a href="#" class="image avatar"><img src="{{ url_for('static', filename='images/avatar.jpg') }}" alt="" /></a>
 					<h2><strong>Welcome to</strong> </h2>
-					<h2><strong>TIW</strong> <br></h2>
-					<p>Everything you need without the hassle</p>
+					<h2><strong>TIW!</strong></h2><br />
+					<p class ="white">Everything you need without the hassle</p>
+                        <ul class="actions special">
+                                <li><a href="#" class="button">BEGIN ORDER LIST</a></li>
+                        </ul>
+                        <ul class="actions special">
+							<li><a href="#" class="button">CANCEL</a></li>
+						</ul>
+                        <ul class="actions special">
+							<li><a href="#" class="button">TIW HOME PAGE</a></li>
+						</ul>
 				</div>
 			</header>
 
@@ -31,11 +45,13 @@
 					<section id="one">
 						<header class="major">
 							<h2>Lets start<br />
-							an order</h2>
+							an order<br /></h2>
+                            
 						</header>
-						<p>Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate lorem neque cubilia ac in adipiscing in curae lobortis tortor primis integer massa adipiscing id nisi accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque cubilia.</p>
+                        <p>Some materials are provided for free, such as hand tools, wires, scrap wood/acrylic, and much more. Please visit the TIW in person for materials that are available for purchase. </p> <br />
+						<p>Please ensure you are a registered TIW student before placing an order.</p> 
 						<ul class="actions">
-							<li><a href="#" class="button">Start Order</a></li>
+							<li><a href="#" class="button gray">Register to TIW</a></li>
 						</ul>
 					</section>
             		<!-- Scripts -->

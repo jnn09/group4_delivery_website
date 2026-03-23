@@ -19,7 +19,7 @@
 ####################################################################
 
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 #import sqlite3                      #SQLite is included with python, it just needs to be imported
 #conn = sqlite3.connect(DB_FILE)
 
@@ -34,6 +34,36 @@ def home():
     return render_template('home.html')
 
 # Example of a route, made by me
-@app.route("/new_order")
-def new_order(): 
-    return "<h1>Start a New Order</h1>"
+@app.route("/login")
+def login(): 
+    return render_template('login.html')
+
+@app.route("/order_list")
+def order_list():
+    return render_template('order_list.html')
+
+@app.route("/exit_tab")
+def exit_tab():
+    return render_template('exit_tab.html')
+
+@app.route("/submit_items", methods=["POST"])
+def submit_items():
+    name = request.form.get("name")
+    eid = request.form.get("eid")
+    location = request.form.get("location")
+    selected_items = request.form.getlist("items")
+
+    print("\n--- NEW ORDER ---")
+    print("Name:", name)
+    print("EID:", eid)
+    print("Location:", location)
+    print("Items:", selected_items)
+
+    return render_template(
+        "order_confirmation.html",
+        name=name,
+        eid=eid,
+        location=location,
+        items=selected_items
+    )
+

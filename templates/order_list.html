@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TIW - Order Catalog</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/order_list.css') }}">
+</head>
+
+<body>
+<br />
+<div class="indent">
+<h1>Order Catalog</h1>
+</div>
+
+    <div class="indent">
+        * Please note that items not listed here may still be available for purchase or loan. Contact the TIW staff for more information.
+    </div> <br />
+
+    <form method="POST" action="/submit_items">
+
+      <!-- Hidden user info -->
+    <input type="hidden" name="name" id="hiddenName">
+    <input type="hidden" name="eid" id="hiddenEID">
+    <input type="hidden" name="location" id="hiddenLocation">
+
+        <div class="catalog">
+            
+            <!-- 24 Bar Clamp -->
+            <label class="item">
+            <input type="checkbox" name="items" value="24 Bar Clamp">
+            <span class="status green"></span>
+            <span class="availability">Available</span>
+            <span class="name">24" Bar Clamp</span>
+            <img src="{{ url_for('static', filename='images/catalog/24BarClamp.png') }}">
+            </label>
+
+            <!-- Carriage Bolt -->
+            <label class="item">
+            <input type="checkbox" name="items" value="Carriage Bolt">
+            <span class="status green"></span>
+            <span class="availability">Available</span>
+            <span class="name">Carriage Bolt</span>
+            <img src="{{ url_for('static', filename='images/catalog/CarriageBolt.png') }}">
+            </label>
+
+            <!-- Eye Bolt -->
+            <label class="item">
+            <input type="checkbox" name="items" value="Eye Bolt">
+            <span class="status green"></span>
+            <span class="availability">Available</span>
+            <span class="name">Eye Bolt</span>
+            <img src="{{ url_for('static', filename='images/catalog/EyeBolt.jpg') }}">
+            </label>
+
+            <!-- Lag Bolt -->
+            <label class="item">
+            <input type="checkbox" name="items" value="Lag Bolt">
+            <span class="status green"></span>
+            <span class="availability">Available</span>
+            <span class="name">Lag Bolt</span>
+            <img src="{{ url_for('static', filename='images/catalog/LagBolt.jpg') }}">
+            </label>
+
+            <!-- Drywall Nail -->
+            <label class="item">
+            <input type="checkbox" name="items" value="Drywall Nail">
+            <span class="status green"></span>
+            <span class="availability">Available</span>
+            <span class="name">Drywall Nail</span>
+            <img src="{{ url_for('static', filename='images/catalog/DrywallNail.jpg') }}">
+            </label>
+
+            <!-- Finishing Nail -->
+            <label class="item">
+            <input type="checkbox" name="items" value="Finishing Nail">
+            <span class="status green"></span>
+            <span class="availability">Available</span>
+            <span class="name">Finishing Nail</span>
+            <img src="{{ url_for('static', filename='images/catalog/FinishingNail.jpg') }}">
+            </label>
+
+            <!-- Masonry Nail -->
+            <label class="item">
+            <input type="checkbox" name="items" value="Masonry Nail">
+            <span class="status green"></span>
+            <span class="availability">Available</span>
+            <span class="name">Masonry Nail</span>
+            <img src="{{ url_for('static', filename='images/catalog/MasonryNail.jpg') }}">
+            </label>
+
+            <!-- Spiral Shank -->
+            <label class="item">
+            <input type="checkbox" name="items" value="Spiral Shank">
+            <span class="status green"></span>
+            <span class="availability">Available</span>
+            <span class="name">Spiral Shank</span>
+            <img src="{{ url_for('static', filename='images/catalog/SpiralShank.jpg') }}">
+            </label>
+
+            <!-- 100k Ohm Resistor -->
+            <label class="item">
+            <input type="checkbox" name="items" value="100k Ohm Resistor">
+            <span class="status green"></span>
+            <span class="availability">Available</span>
+            <span class="name">100k Ohm Resistor</span>
+            <img src="{{ url_for('static', filename='images/catalog/100kResistor.png') }}">
+            </label>
+
+        </div>
+
+        <button type="submit">Submit Order</button>
+    </form>
+
+    <script>
+    document.getElementById("hiddenName").value = localStorage.getItem("userName");
+    document.getElementById("hiddenEID").value = localStorage.getItem("userEID");
+    document.getElementById("hiddenLocation").value = localStorage.getItem("deliveryLocation");
+    </script>
+
+</body>
+</html>

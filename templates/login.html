@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Order System</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://inventionworks.engr.utexas.edu/images/tiw-outside.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      width: 350px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: #ddd;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background: #bf5700;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #8c3d00;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Texas Inventionworks</h2>
+
+  <form id="loginForm" method="POST" action="/submit_order">
+    <label>Name:</label>
+    <input type="text" id="name" />
+
+    <label>EID:</label>
+    <input type="text" id="eid" />
+
+    <label>Where should we deliver your items:</label>
+    <select id="location">
+      <option value="">Select</option>
+      <option value="The Garage">The Garage</option>
+      <option value="Thermal Processing">Thermal Processing</option>
+      <option value="Machine Infirmary">Machine Infirmary</option>
+      <option value="Additive Manufacturing">Additive Manufacturing</option>
+      <option value="CNC Lab">CNC Lab</option>
+      <option value="Machine Shop">Machine Shop</option>
+      <option value="Digital Fabrication">Digital Fabrication</option>
+      <option value="Laser Lab">Laser Lab</option>
+    </select>
+
+    <button type="submit">Continue</button>
+    <div class="error" id="error"></div>
+  </form>
+</div>
+
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let eid = document.getElementById("eid").value.trim();
+    let location = document.getElementById("location").value;
+    let error = document.getElementById("error");
+
+    if (!name || !eid || !location) {
+      error.textContent = "Please fill in all fields.";
+      return;
+    }
+
+    // Save data
+    localStorage.setItem("userName", name);
+    localStorage.setItem("userEID", eid);
+    localStorage.setItem("deliveryLocation", location);
+
+    // Redirect to confirmation page
+    window.location.href = "/order_list";
+  });
+</script>
+
+</body>
+</html>

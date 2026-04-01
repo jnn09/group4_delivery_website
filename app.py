@@ -1,6 +1,6 @@
 # Jessica Nelson 
 # Senior Design Project. Spr 26
-# This file is used for Flask and API integration to an automated robot to roam TIW.
+# This file is used for Flask and API integration to an automated robot to roam and deliver inside TIW.
 
 # Included pages of the site should be: 
 #   Home and Welcome

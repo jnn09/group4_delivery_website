@@ -18,9 +18,6 @@
 # flask --app app --debug --no-debug --no-reload
 ####################################################################
 
-import eventlet
-eventlet.monkey_patch()  # This is needed for Flask-SocketIO to work properly with eventlet
-
 from flask import Flask, render_template, request, redirect, url_for
 from flask_socketio import SocketIO, emit
 #import sqlite3                      #SQLite is included with python, it just needs to be imported
@@ -30,7 +27,7 @@ from flask_socketio import SocketIO, emit
 app = Flask(__name__)               # name of the module, __name__ = main
 app.config['SECRET_KEY'] = 'bevo_key'
 
-socketio = SocketIO(app, async_mode='eventlet', cors_allowed_origins="*")
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 #below is a simple example to test basic commands
 @app.route("/")

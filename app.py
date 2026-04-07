@@ -67,7 +67,7 @@ def submit_items():
     print(order_data)
 
     # WIRELESS COMMAND: This "shouts" the order to any connected robot
-    socketio.emit('new_delivery_order', order_data)
+    socketio.emit('new_delivery_order', order_data, namespace='/')
 
     return render_template(
         "order_confirmation.html",
